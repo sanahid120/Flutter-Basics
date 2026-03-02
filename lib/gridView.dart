@@ -15,6 +15,28 @@ class GridViewClass extends StatelessWidget {
         centerTitle: true,
       ),
 
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        padding: EdgeInsets.all(10),
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return Card(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Item $index',
+                style: TextStyle(color: Colors.white, fontSize: 6),
+              ),
+            ),
+          );
+        },
+      ),
+
+      /*
       body: GridView.count(
         crossAxisCount: 2,
         crossAxisSpacing: 10,
@@ -39,7 +61,7 @@ class GridViewClass extends StatelessWidget {
             ),
           );
         }),
-      ),
+      ),*/
 
       /*  
       body: GridView.count(

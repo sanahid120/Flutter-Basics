@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/gridView.dart';
+import 'package:flutter_basics/homepage.dart';
+import 'stack.dart';
+import 'Widgets/homepageGrid.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
         ),
       ),
-      home: GridViewClass(),
+      home: MyHomePage(),
     );
   }
 }

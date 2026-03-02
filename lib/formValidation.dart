@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class FormFieldClass extends StatelessWidget {
@@ -74,12 +75,15 @@ class FormFieldClass extends StatelessWidget {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     // If the form is valid, you can proceed with further actions
-                    print('Form is valid');
+                    if (kDebugMode) {
+                      print('Form is valid');
+                    }
                   } else {
                     // If the form is invalid, you can show an error message or take appropriate action
-                    print('Form is invalid');
+                    if (kDebugMode) {
+                      print('Form is invalid');
+                    }
                   }
-                  ;
                 },
                 child: Text('Submit'),
               ),

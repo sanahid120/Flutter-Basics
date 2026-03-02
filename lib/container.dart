@@ -62,13 +62,13 @@ class ContainerClass extends StatelessWidget {
               height: 200,
               width: 200,
               alignment: Alignment.center,
-              child: Text(
-                'Flutter Card',
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
               decoration: BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                'Flutter Card',
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
           ),
