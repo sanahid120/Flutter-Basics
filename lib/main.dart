@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/container.dart';
+import 'package:flutter_basics/gridView.dart';
+import 'package:flutter_basics/listView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
         ),
       ),
-      home: ContainerClass(),
+      home: GridViewClass(),
     );
   }
 }
