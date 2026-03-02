@@ -15,26 +15,51 @@ class GridViewClass extends StatelessWidget {
         centerTitle: true,
       ),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          GridView.count(
-            crossAxisCount: 2,
-            children: List.generate(9, (index) {
-              return Card(
-                color: Colors.blue,
-                child: Center(
-                  child: Text(
-                    'Item $index',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
-              );
-            }),
-          ),
-        ],
+      body: GridView.count(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
+
+        children: List.generate(20, (index) {
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            elevation: 20,
+            color: Colors.blue,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Grid $index'),
+                  Icon(Icons.money, color: Colors.white),
+                ],
+              ),
+            ),
+          );
+        }),
       ),
+
+      /*  
+      body: GridView.count(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
+        children: List.generate(20, (index) {
+          return Card(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Item $index',
+                style: TextStyle(color: Colors.white, fontSize: 6),
+              ),
+            ),
+          );
+        }),
+      ),
+       */
     );
   }
 }

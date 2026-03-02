@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/gridView.dart';
-import 'package:flutter_basics/listView.dart';
 
 void main() {
   runApp(const MyApp());
