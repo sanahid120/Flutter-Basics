@@ -8,6 +8,7 @@ import 'image.dart';
 import 'text_and_buttons.dart';
 import 'container.dart';
 import 'formValidation.dart';
+import 'alert.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -63,6 +64,12 @@ class MyHomePage extends StatelessWidget {
         'icon': Icons.check_circle,
         'color': Colors.pink,
         'page': const FormFieldClass(),
+      },
+      {
+        'text': 'Alert Dialouge',
+        'icon': Icons.warning,
+        'color': Colors.brown,
+        'page': const AlertDialougeWidget(),
       },
     ];
 
