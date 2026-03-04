@@ -21,9 +21,9 @@ class AlertDialougeWidget extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('You clicked OK')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('You clicked OK')));
                 Navigator.pop(context);
               },
               child: Text('OK'),
@@ -44,27 +44,27 @@ class AlertDialougeWidget extends StatelessWidget {
           children: [
             SimpleDialogOption(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Option 1 selected')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('Option 1 selected')));
                 Navigator.pop(context);
               },
               child: Text('Option 1'),
             ),
             SimpleDialogOption(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Option 2 selected')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('Option 2 selected')));
                 Navigator.pop(context);
               },
               child: Text('Option 2'),
             ),
             SimpleDialogOption(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Option 3 selected')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('Option 3 selected')));
                 Navigator.pop(context);
               },
               child: Text('Option 3'),
@@ -92,9 +92,9 @@ class AlertDialougeWidget extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Item deleted')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('Item deleted')));
                 Navigator.pop(context);
               },
               child: Text('Yes'),
@@ -127,9 +127,9 @@ class AlertDialougeWidget extends StatelessWidget {
                 leading: Icon(Icons.edit),
                 title: Text('Edit'),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Edit selected')),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Edit selected')));
                   Navigator.pop(context);
                 },
               ),
@@ -137,9 +137,9 @@ class AlertDialougeWidget extends StatelessWidget {
                 leading: Icon(Icons.share),
                 title: Text('Share'),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Share selected')),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Share selected')));
                   Navigator.pop(context);
                 },
               ),
@@ -147,9 +147,9 @@ class AlertDialougeWidget extends StatelessWidget {
                 leading: Icon(Icons.delete),
                 title: Text('Delete'),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Delete selected')),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Delete selected')));
                   Navigator.pop(context);
                 },
               ),
@@ -208,6 +208,28 @@ class AlertDialougeWidget extends StatelessWidget {
                 _showBottomSheet(context);
               },
               child: Text('Show Bottom Sheet'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: true,
+
+                  builder: (context) {
+                    return AlertDialog(
+                      content: Row(
+                        children: [
+                          CircularProgressIndicator(),
+                          SizedBox(width: 20),
+                          Text('Please wait Loading... '),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: Text('Progress button'),
             ),
           ],
         ),

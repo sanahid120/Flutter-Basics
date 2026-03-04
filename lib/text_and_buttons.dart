@@ -73,12 +73,36 @@ class TextAndButtons extends StatelessWidget {
 
                   TextButton(
                     style: TextButton.styleFrom(),
-                    onPressed: () {},
-                    child: Icon(Icons.telegram),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Text Button Pressed'),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                    },
+                    child: Text('Text Button'),
                   ),
                   SizedBox(height: 30),
 
-                  IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+                  IconButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Row(
+                            children: [
+                              Icon(Icons.delete, color: Colors.white),
+                              SizedBox(width: 20),
+                              Text('Delete Button Pressed'),
+                            ],
+                          ),
+
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                    },
+                    icon: Icon(Icons.delete),
+                  ),
 
                   // GestureDetector
                   GestureDetector(
@@ -88,6 +112,7 @@ class TextAndButtons extends StatelessWidget {
                     onDoubleTapCancel: () => print('Double Tap Cancelled'),
                     onDoubleTapDown: (details) =>
                         print('Double Tap Down: $details'),
+
                     child: Container(
                       height: 100,
                       width: 500,
@@ -106,7 +131,20 @@ class TextAndButtons extends StatelessWidget {
                     ),
                   ),
                   FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Row(
+                            children: [
+                              CircularProgressIndicator(),
+                              SizedBox(width: 20),
+                              Text('Loading...'),
+                            ],
+                          ),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                    },
                     child: Icon(Icons.add),
 
                     elevation: 10,

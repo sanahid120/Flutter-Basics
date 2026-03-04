@@ -5,6 +5,8 @@ class ImageClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
@@ -26,12 +28,12 @@ class ImageClass extends StatelessWidget {
           Image.network(
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s',
 
-            height: 200,
-            width: 200,
+            height: size.height * 0.3,
+            width: size.width * 0.8,
             fit: BoxFit.cover,
           ),
           SizedBox(height: 20),
-          Image.asset(
+          /*Image.asset(
             'assets/images/flutter_logo.png',
 
             /* create an asset folder to store the images,
@@ -39,7 +41,7 @@ class ImageClass extends StatelessWidget {
              add the path of the image in the assets section*/
             height: 100,
             width: 100,
-          ),
+          ),*/
         ],
       ),
     );

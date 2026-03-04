@@ -9,6 +9,7 @@ import 'text_and_buttons.dart';
 import 'container.dart';
 import 'formValidation.dart';
 import 'alert.dart';
+import 'bars.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -70,6 +71,12 @@ class MyHomePage extends StatelessWidget {
         'icon': Icons.warning,
         'color': Colors.brown,
         'page': const AlertDialougeWidget(),
+      },
+      {
+        'text': 'Bars',
+        'icon': Icons.table_bar,
+        'color': Colors.cyan,
+        'page': const BarsWidgets(),
       },
     ];
 
