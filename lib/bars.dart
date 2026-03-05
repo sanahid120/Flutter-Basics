@@ -17,14 +17,17 @@ class BarsWidgets extends StatelessWidget {
           ),
           bottom: TabBar(
             isScrollable: false,
+
             //indicatorColor: Colors.white,
             //indicatorWeight: 4,
-            indicator: BoxDecoration(
+            /*indicator: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            indicatorPadding: EdgeInsetsGeometry.all(5),
+              borderRadius: BorderRadius.circular(0),
+            ),*/
+            indicatorColor: Colors.white,
+            indicatorAnimation: TabIndicatorAnimation.elastic,
             tabs: [
+              // you can also use customized widgets instead of text and icons, just make sure to wrap them in a Tab widget
               Tab(text: 'home', icon: Icon(Icons.home)),
               Tab(text: 'search', icon: Icon(Icons.search)),
               Tab(text: 'settings', icon: Icon(Icons.settings)),
