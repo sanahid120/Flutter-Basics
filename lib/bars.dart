@@ -109,6 +109,78 @@ class BarsWidgets extends StatelessWidget {
             ],
           ),
         ),
+        endDrawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                //decoration: BoxDecoration(color: Colors.orange),
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey,
+
+                      child: Text(
+                        'SAN',
+                        style: TextStyle(fontSize: 24, color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Asfakunnobi Nahid',
+                      style: TextStyle(fontSize: 18, color: Colors.black87),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Home End Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.search),
+                title: Text('Search'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Search End Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Settings End Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
         body: TabBarView(
           children: [
             Center(
