@@ -24,8 +24,10 @@ class BarsWidgets extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(0),
             ),*/
+            indicatorPadding: EdgeInsets.all(5),
             indicatorColor: Colors.white,
             indicatorAnimation: TabIndicatorAnimation.elastic,
+            labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             tabs: [
               // you can also use customized widgets instead of text and icons, just make sure to wrap them in a Tab widget
               Tab(text: 'home', icon: Icon(Icons.home)),
@@ -34,6 +36,78 @@ class BarsWidgets extends StatelessWidget {
             ],
           ),
           centerTitle: true,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                //decoration: BoxDecoration(color: Colors.orange),
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.yellowAccent,
+
+                      child: Text(
+                        'SAN',
+                        style: TextStyle(fontSize: 24, color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Asfakunnobi Nahid',
+                      style: TextStyle(fontSize: 18, color: Colors.black87),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Home Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.search),
+                title: Text('Search'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Search Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Settings Drawer Item Pressed'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
         body: TabBarView(
           children: [
