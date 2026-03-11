@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BarsWidgets extends StatelessWidget {
+class BarsWidgets extends StatefulWidget {
   const BarsWidgets({super.key});
 
+  @override
+  State<BarsWidgets> createState() => _BarsWidgetsState();
+}
+
+class _BarsWidgetsState extends State<BarsWidgets> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -50,7 +55,7 @@ class BarsWidgets extends StatelessWidget {
                       backgroundColor: Colors.yellowAccent,
 
                       child: Text(
-                        'SAN',
+                        'SA',
                         style: TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ),
@@ -94,7 +99,7 @@ class BarsWidgets extends StatelessWidget {
               Divider(),
               ListTile(
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
-                leading: Icon(Icons.settings),
+                leading: Icon(Icons.menu),
                 title: Text('Settings'),
                 onTap: () {
                   Navigator.pop(context);
@@ -114,22 +119,21 @@ class BarsWidgets extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               DrawerHeader(
-                //decoration: BoxDecoration(color: Colors.orange),
+                decoration: BoxDecoration(color: Colors.orange),
                 child: Column(
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundColor: Colors.grey,
-
+                      backgroundColor: Colors.yellowAccent,
                       child: Text(
-                        'SAN',
+                        'SA',
                         style: TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ),
                     SizedBox(height: 10),
                     Text(
                       'Asfakunnobi Nahid',
-                      style: TextStyle(fontSize: 18, color: Colors.black87),
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ],
                 ),
@@ -166,7 +170,7 @@ class BarsWidgets extends StatelessWidget {
               Divider(),
               ListTile(
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
-                leading: Icon(Icons.settings),
+                leading: Icon(Icons.menu),
                 title: Text('Settings'),
                 onTap: () {
                   Navigator.pop(context);
@@ -181,6 +185,7 @@ class BarsWidgets extends StatelessWidget {
             ],
           ),
         ),
+
         body: TabBarView(
           children: [
             Center(
