@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/Widgets/homepageGrid.dart';
 import 'package:flutter_basics/formValidation.dart';
 import 'package:flutter_basics/homepage.dart';
 import 'package:flutter_basics/image.dart';
@@ -12,7 +11,6 @@ class BarsWidgets extends StatefulWidget {
 }
 
 class _BarsWidgetsState extends State<BarsWidgets> {
-  @override
   int _currentIndex = 0;
   List pages = [MyHomePage(), ImageClass(), FormFieldClass()];
   onTap(int index) {
