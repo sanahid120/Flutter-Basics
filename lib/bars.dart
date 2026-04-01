@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/Widgets/homepageGrid.dart';
+import 'package:flutter_basics/formValidation.dart';
+import 'package:flutter_basics/homepage.dart';
+import 'package:flutter_basics/image.dart';
 
 class BarsWidgets extends StatefulWidget {
   const BarsWidgets({super.key});
@@ -9,6 +13,14 @@ class BarsWidgets extends StatefulWidget {
 
 class _BarsWidgetsState extends State<BarsWidgets> {
   @override
+  int _currentIndex = 0;
+  List pages = [MyHomePage(), ImageClass(), FormFieldClass()];
+  onTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
@@ -41,6 +53,26 @@ class _BarsWidgetsState extends State<BarsWidgets> {
             ],
           ),
           centerTitle: true,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: onTap(_currentIndex),
+          items: [
+            /*  take index number as reference also create 
+            a list of pages for navigation. and then add the Page list to body
+            int index =0 
+            pageList = [HomePage(), SearchPage(), SettingsPage()]
+            body: pageList[index]
+
+            */
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ],
         ),
         drawer: Drawer(
           child: ListView(
@@ -82,6 +114,7 @@ class _BarsWidgetsState extends State<BarsWidgets> {
                 },
               ),
               Divider(),
+
               ListTile(
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
                 leading: Icon(Icons.search),

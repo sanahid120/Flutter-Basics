@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/homepage.dart';
+import 'package:flutter_basics/listView.dart';
+import 'package:flutter_basics/image.dart';
+import 'package:flutter_basics/text_and_buttons.dart';
+import 'package:flutter_basics/container.dart';
+import 'package:flutter_basics/input_fields.dart';
+import 'package:flutter_basics/formValidation.dart';
+import 'package:flutter_basics/alert.dart';
+import 'package:flutter_basics/bars.dart';
+import 'package:flutter_basics/liveExam.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,7 +82,17 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      home: MyHomePage(),
+      home: LiveExam(),
+      routes: {
+        '/textinput': (context) => const TextInputField(),
+        '/listview': (context) => const ListviewClass(),
+        '/image': (context) => const ImageClass(),
+        '/textbuttons': (context) => const TextAndButtons(),
+        '/container': (context) => const ContainerClass(),
+        '/formvalidation': (context) => const FormFieldClass(),
+        '/alertdialouge': (context) => const AlertDialougeWidget(),
+        '/bars': (context) => const BarsWidgets(),
+      },
     );
   }
 }
